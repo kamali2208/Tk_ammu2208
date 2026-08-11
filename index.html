@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THE DESTINATION WAS ALWAYS YOU ❤️</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+ --bg:#050309;
+ --purple:#7b35b8;
+ --purple2:#35114f;
+ --gold:#d5a94f;
+ --gold2:#ffe39a;
+ --paper:#f1dfad;
+ --white:#fff;
+}
+html{scroll-behavior:smooth}
+body{
+ background:
+ radial-gradient(circle at 50% 0%,#30104b,transparent 35%),
+ linear-gradient(135deg,#030208,#12061c,#050208);
+ color:white;
+ font-family:Georgia,serif;
+ min-height:100vh;
+ overflow-x:hidden;
+}
+body:before{
+ content:"";
+ position:fixed;inset:0;pointer-events:none;opacity:.12;
+ background-image:radial-gradient(#fff 1px,transparent 1px);
+ background-size:38px 38px;
+}
+button{font-family:inherit;cursor:pointer}
+.screen{
+ display:none;min-height:100vh;padding:35px 15px;
+ align-items:center;justify-content:center;text-align:center;
+ position:relative;
+}
+.screen.active{display:flex;animation:pageIn .65s ease}
+.card{
+ width:min(900px,95vw);padding:32px 20px;
+ border:1px solid rgba(213,169,79,.4);
+ border-radius:28px;
+ background:linear-gradient(145deg,rgba(255,255,255,.11),rgba(255,255,255,.035));
+ backdrop-filter:blur(18px);
+ box-shadow:0 25px 80px #000,inset 0 1px rgba(255,255,255,.12);
+}
+h1{font-size:clamp(2.5rem,9vw,5rem);color:var(--gold2);
+text-shadow:0 0 30px #a34fff;margin:15px 0}
+h2{font-size:clamp(1.7rem,6vw,3rem);color:var(--gold2);margin-bottom:15px}
+h3{color:var(--gold2);margin:12px}
+p{line-height:1.8;color:#eee;margin:10px auto;max-width:680px}
+.btn{
+ padding:13px 22px;margin:8px 4px;border:0;border-radius:30px;
+ color:white;background:linear-gradient(135deg,#7030a9,#a65be5);
+ box-shadow:0 8px 25px #0008;transition:.3s
+}
+.btn:hover{transform:translateY(-3px) scale(1.03)}
+.goldBtn{background:linear-gradient(135deg,#8b641d,#f1d477,#9a701f);color:#180e03}
+.back{position:absolute;top:15px;left:15px;padding:8px 15px;border-radius:20px;
+background:#ffffff12;color:white;border:1px solid #ffffff20}
+.train{font-size:6rem;animation:train 2s infinite alternate}
+@keyframes train{to{transform:translateX(15px)}}
+.stars{font-size:25px;letter-spacing:8px;animation:twinkle 2s infinite alternate}
+@keyframes twinkle{to{text-shadow:0 0 25px white}}
+.ticket{
+ max-width:600px;margin:20px auto;padding:25px;background:#17100b;
+ border:2px dashed var(--gold);transform:rotate(-1deg);box-shadow:0 20px 40px #000
+}
+
+/* SKY */
+.sky{position:relative;min-height:500px;overflow:hidden}
+.sticker{
+ position:absolute;background:#fff;color:#111;border:5px solid white;
+ border-radius:20px;padding:8px;font-size:30px;
+ box-shadow:0 8px 20px #0008;animation:float 4s infinite alternate
+}
+.st1{left:7%;top:8%}.st2{right:10%;top:12%;animation-delay:1s}
+.st3{left:15%;top:38%;animation-delay:2s}.st4{right:15%;top:42%;animation-delay:.5s}
+.st5{left:8%;bottom:12%;animation-delay:1.5s}.st6{right:8%;bottom:10%;animation-delay:2.5s}
+@keyframes float{to{transform:translateY(-14px) rotate(5deg)}}
+
+/* DESTINATIONS */
+.destinations{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px;margin:25px 0
+}
+.destination{
+ min-height:120px;padding:15px;display:flex;flex-direction:column;justify-content:center;
+ align-items:center;gap:6px;border:1px solid #d5a94f55;border-radius:20px;
+ background:#ffffff09;cursor:pointer;transition:.3s
+}
+.destination:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 0 20px #7b35b855}
+.pin{font-size:28px}.destination b{color:var(--gold2);font-size:14px}.destination small{color:#cfc5d8}
+
+/* PASSPORT */
+.passport{
+ max-width:650px;margin:auto;background:#291a0d;padding:25px;border-radius:15px;
+ box-shadow:inset 0 0 35px #000;border:2px solid #9c7531
+}
+.stamps{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:20px}
+.stamp{
+ width:80px;height:80px;border:2px dashed #d5a94f;border-radius:50%;
+ display:flex;align-items:center;justify-content:center;color:#d5a94f;font-size:11px;
+ opacity:.25
+}
+.stamp.unlocked{opacity:1;background:#5a351455;box-shadow:0 0 15px #d5a94f66}
+
+/* CHAT */
+.chat{max-width:600px;margin:20px auto;text-align:left}
+.msg{padding:12px 16px;margin:9px;border-radius:18px;max-width:80%}
+.left{background:#21172c}.right{background:#6338a3;margin-left:auto}
+
+/* LETTER */
+.envelope{
+ width:min(380px,90vw);height:250px;margin:45px auto;position:relative;cursor:pointer
+}
+.envback,.envfront{position:absolute;inset:0;border-radius:8px;background:linear-gradient(145deg,#70451f,#29150b);border:2px solid #c99b45;box-shadow:0 20px 45px #000}
+.envback{z-index:1}
+.letter{
+ position:absolute;left:7%;bottom:15px;width:86%;min-height:220px;padding:20px;
+ background:var(--paper);color:#29180d;border-radius:5px;z-index:2;
+ transform:translateY(0);transition:1.2s cubic-bezier(.2,.8,.2,1);box-shadow:0 10px 25px #0008
+}
+.letter p{color:#352015;font-size:14px}
+.flap{
+ position:absolute;top:0;left:0;width:100%;height:55%;z-index:5;
+ transform-origin:top;transition:.9s;
+ background:#4c2a13;clip-path:polygon(0 0,100% 0,50% 100%)
+}
+.envfront{z-index:4;clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%)}
+.seal{
+ position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+ width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+ background:#8b1828;border:4px solid var(--gold);font-size:25px;transition:.5s
+}
+.envelope.open .flap{transform:rotateX(180deg);z-index:1}
+.envelope.open .letter{transform:translateY(-145px);z-index:6}
+.envelope.open .seal{opacity:0}
+
+/* GAMES */
+.gamebox{max-width:600px;margin:20px auto;padding:20px;border:1px solid #ffffff18;border-radius:20px;background:#ffffff06}
+input{
+ padding:13px;border-radius:12px;border:1px solid var(--gold);
+ background:#08050c;color:white;text-align:center;margin:8px;outline:none
+}
+.scratch{
+ width:min(350px,90vw);height:170px;margin:20px auto;border-radius:20px;
+ background:linear-gradient(135deg,#c79b35,#f5d778);
+ color:#251606;display:flex;align-items:center;justify-content:center;
+ position:relative;overflow:hidden;cursor:pointer
+}
+.scratch:after{content:"SCRATCH ✨";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+background:linear-gradient(135deg,#777,#bbb);transition:.7s}
+.scratch.reveal:after{transform:translateY(-100%)}
+.puzzle{width:300px;height:300px;margin:20px auto;display:grid;grid-template-columns:repeat(2,1fr);gap:4px}
+.piece{background-size:300px 300px;border:1px solid var(--gold);cursor:pointer}
+.balloon{
+ display:inline-flex;width:65px;height:82px;border-radius:50%;margin:10px;
+ background:radial-gradient(circle at 30% 25%,#fff,#a85cff 25%,#4a147d);
+align-items:center;justify-content:center;font-size:25px;cursor:pointer
+}
+.matchgrid{display:grid;grid-template-columns:repeat(4,65px);justify-content:center;gap:8px;margin:20px}
+.match{height:65px;background:#28143d;border:1px solid var(--gold);border-radius:10px;
+display:flex;align-items:center;justify-content:center;font-size:27px;cursor:pointer}
+.catchheart{font-size:35px;display:inline-block;margin:10px;cursor:pointer}
+.wheel{
+ width:220px;height:220px;border-radius:50%;margin:20px auto;
+ background:conic-gradient(#7b35b8 0 45deg,#d5a94f 45deg 90deg,#35114f 90deg 135deg,#e0b956 135deg 180deg,#7b35b8 180deg 225deg,#d5a94f 225deg 270deg,#35114f 270deg 315deg,#e0b956 315deg);
+ display:flex;align-items:center;justify-content:center;font-size:45px;border:8px solid #171018;transition:2s
+}
+
+/* BIRTHDAY */
+.cake{font-size:7rem;cursor:pointer;transition:.4s}
+.cake.off{filter:brightness(.45);transform:scale(.95)}
+.count{font-size:clamp(2rem,10vw,5rem);color:var(--gold2);margin:20px}
+.video{width:min(700px,95%);border-radius:20px;border:1px solid var(--gold);margin:20px auto}
+.firework{position:fixed;font-size:35px;animation:boom 1.5s forwards;pointer-events:none;z-index:9999}
+@keyframes boom{0%{transform:scale(.2);opacity:1}100%{transform:scale(4) translateY(-100px);opacity:0}}
+.progress{width:min(650px,90%);height:15px;background:#1a1122;border-radius:20px;overflow:hidden;margin:20px auto}
+.progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#7b35b8,#f0c85e);transition:1s}
+.finalHeart{font-size:8rem;animation:beat .8s infinite}
+@keyframes beat{50%{transform:scale(1.2)}}
+.photo{width:220px;height:220px;object-fit:cover;border-radius:20px;border:2px solid var(--gold);margin:8px;box-shadow:0 15px 35px #000}
+.photos{display:flex;flex-wrap:wrap;justify-content:center}
+
+/* POPUP */
+.popup{display:none;position:fixed;inset:0;z-index:9998;background:#000b;backdrop-filter:blur(12px);
+align-items:center;justify-content:center;padding:20px}
+.popup.show{display:flex}
+.popupbox{width:min(430px,92vw);padding:30px;background:linear-gradient(145deg,#25103b,#0c0712);
+border:1px solid var(--gold);border-radius:25px;text-align:center;box-shadow:0 30px 80px #000}
+.close{float:right;background:#ffffff12;color:white;border:0;border-radius:50%;width:32px;height:32px;font-size:22px}
+</style>
+</head>
+
+<body>
+
+<!-- 1 -->
+<section class="screen active" id="s1">
+<div class="card">
+<div class="train">🚂</div>
+<div class="stars">✦ ✧ ★ ✧ ✦</div>
+<h1>LOVE TRAIN</h1>
+<p>One journey. Two hearts. One destination. ❤️</p>
+<button class="btn goldBtn" onclick="go(2)">START OUR JOURNEY →</button>
+</div>
+</section>
+
+<!-- 2 -->
+<section class="screen" id="s2">
+<div class="card">
+<h2>🎫 Golden Ticket</h2>
+<div class="ticket">
+<h2>FOREVER EXPRESS</h2>
+<p>Passenger: <b>My Partner ❤️</b></p>
